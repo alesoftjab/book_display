@@ -1,0 +1,76 @@
+<div class="modal fade" id="viewShopCart" tabindex="-1" role="dialog" aria-labelledby="addItemModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addItemModalLabel"><span aria-hidden="true"><i class="fas fa-shopping-cart "></i> </span>Mi Carro de Compras</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+				<div id="shopCartList">
+					
+				</div>
+
+
+				<div class="bg-light text-dark">
+					<div class="row no-gutters">
+
+						<div class="col-md-9">
+							<h5 class="card-title p-3 ">Totales Generales</h5>
+						</div>
+						
+						<div class="col-md-3 ">
+							<p class="card-text">
+								<label class="control-label col-form-label">Cantidad Total</label>
+								<input readonly type="number" class="form-control" name="__cantidad_total" id="__cantidad_total" value="0" style="text-align:center;" autocomplete='off'>
+							</p>
+							<p class="card-text">
+								<div class="row">
+									<div class="col">
+										<label class="control-label col-form-label">Precio Total</label>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text" id="inputGroupPrepend">$</span>
+											</div>
+											<input type="text" readonly class="form-control" id="__precio_total" name="__precio_total" style="text-align:center;" value="">
+										</div>				
+									</div>
+								</div>
+							</p>
+							
+						</div>				
+					</div>
+				</div>
+
+				
+				<div id="errorViewShopCart">
+					<div class="alert alert-danger"> <strong>Error!</strong> Hay errores en el formulario!</div>
+				</div>
+													
+				<div class="modal-footer">
+					<button type="button" class="btn " id="__submitShopCart" style="background-color: #2BC14D; color: white;" > <span class="credits">FINALIZAR MI COMPRA</span></button>
+					<button type="button" class="btn btn-default" data-dismiss="modal" id="reset">Cerrar</button>
+				</div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+
+$('#errorViewShopCart').hide();
+
+
+</script>
+
+<style>
+span.credits {
+	background: url(https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/whatsapp.svg) no-repeat top left;
+	background-size: contain;
+	cursor: pointer;
+	display: inline-block;
+	padding-left: 30px
+}
+</style>

@@ -1,0 +1,98 @@
+<div class="modal fade" id="addItemModal" tabindex="-1" role="dialog" aria-labelledby="addItemModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addItemModalLabel">Agregar Producto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+				<div class="form-group">
+					<div style="display: table-row;">
+						<div >
+							<div class="col-md-12">
+								<div >
+									<select name="__cmbProducts" id="__cmbProducts" class="form-control form-control-lg">
+									</select>
+								</div>				
+							</div>
+							<div class="col-md-12">
+								<div class="row">
+									<div class="col-md-4">
+										<label class="control-label col-form-label-lg">Cantidad</label>
+										<div>
+											<input required type="number" class="form-control" name="__cantidad" id="__cantidad" value='1' autocomplete='off'>
+										</div>				
+									</div>
+									<div class="col-md-4">
+										<label class="control-label col-form-label-lg">Precio Unitario</label>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text" id="inputGroupPrepend">$</span>
+											</div>
+											<input type="text" readonly class="form-control" id="txtPrecioUnitario">
+										</div>				
+									</div>
+									<div class="col-md-4">
+										<label class="control-label col-form-label-lg">Subtotal</label>
+										<div class="input-group">
+											<div class="input-group-prepend">
+												<span class="input-group-text" id="inputGroupPrepend">$</span>
+											</div>
+											<input type="text" readonly class="form-control" id="txtSubtotal">
+										</div>				
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="error">
+					<div class="alert alert-danger"> <strong>Error!</strong> Hay errores en el formulario!</div>
+				</div>
+													
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" id="__submitForm">Aceptar</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal" id="reset">Cancelar / Borrar</button>
+				</div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+
+$('#error').hide();
+$('#submitForm').click(function (e) {
+	e.preventDefault();
+	$('#error').hide();
+	$('cantidad').focus();
+	
+	$.ajax({
+		type: 'POST',
+		url: 'index.php',
+		data: $('#myform').serialize(),
+		success: function (data) {
+			
+			var respuesta = $.parseJSON(data);
+			if(respuesta.estado!=true)
+			{
+				$('#error').html('<div class=\"alert alert-danger\"><strong>Error: </strong>' + respuesta.descripcion + '</div>');	
+				$('#error').show();
+			}
+			else
+			{
+				BstrapModal.Close();
+				//$('_id_modal').modal('hide');
+			}
+		},
+		error: function () {
+			$('#error').show();
+		}
+	});
+});
+
+
+</script>

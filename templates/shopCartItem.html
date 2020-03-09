@@ -1,0 +1,47 @@
+<script>
+
+const shopCartItem = ({ nombre, codigo, cantidad, precio, subtotal }, index) => `
+	<div class="card mb-1 shopCartItem" id="shopCartItem${index}" itemIndex="${index}">
+		<div class="row no-gutters">
+
+			<div class="col-md-9">
+				<div class="card-body">
+					<h5 class="card-title">${codigo}</h5>
+					<p class="card-text">${nombre}</p>
+					<p class="card-text">
+						<div class="row">
+							<small class="col control-label text-muted">Precio Unitario $ ${precio.toFixed(2)}</small>
+							<input type="hidden" name="__precio_unitario[]" itemIndex="${index}" id="__precio_unitario${index}" value="${precio.toFixed(2)}">
+							<div class="input-group p-2">
+								<button id="eliminar${index}" name="eliminar" itemIndex="${index}" value="Eliminar" type="button" class="btn btn-danger btn-sm btnEliminar"><span aria-hidden="true"><i class="fas fa-times-circle"></i> Eliminar</span></button>
+							</div>
+						</div>
+					</p>
+				</div>
+			</div>
+			
+			<div class="col-md-3 ">
+				<p class="card-text">
+					<label class="control-label col-form-label">Cantidad</label>
+					<input required type="number" class="form-control input_cantidad" itemIndex="${index}" name="__cantidad[]" id="__cantidad${index}" value="${cantidad}" style="text-align:center;" autocomplete='off'>
+				</p>
+				<p class="card-text">
+					<div class="row">
+						<div class="col">
+							<label class="control-label col-form-label">Subtotal</label>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">$</span>
+								</div>
+								<input type="text" readonly class="form-control" itemIndex="${index}" id="txtSubtotal${index}" name="txtSubtotal[]" style="text-align:center;" value="${subtotal.toFixed(2)}">
+							</div>				
+						</div>
+					</div>
+				</p>
+				
+			</div>				
+		</div>
+	</div>
+`;
+
+</script>

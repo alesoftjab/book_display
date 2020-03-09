@@ -1,0 +1,56 @@
+<div class="modal fade" id="shareLink" tabindex="-1" role="dialog" aria-labelledby="shareLinkModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addItemModalLabel"><span aria-hidden="true"><i class="fas fa-shopping-cart "></i> </span>Compartir por WhatsApp</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+
+				<div class="bg-light text-dark">
+					<div class="row no-gutters">
+						
+						<div class="col-md-3 ">
+							<p class="card-text">
+								<label class="control-label col-form-label">Mi teléfono de contacto</label>
+								<input type="text" class="form-control" name="__contact_phone" id="__contact_phone" value="" style="text-align:center;">
+							</p>
+							
+						</div>				
+					</div>
+				</div>
+
+				
+				<div id="errorShareLink">
+					<div class="alert alert-danger"> <strong>Error!</strong> Hay errores en el formulario!</div>
+				</div>
+													
+				<div class="modal-footer">
+					<button type="button" class="btn " id="__submitShareLink" style="background-color: #2BC14D; color: white;" > <span class="credits">ENVIAR</span></button>
+					<button type="button" class="btn btn-default" data-dismiss="modal" id="reset">Cerrar</button>
+				</div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+
+$('#errorShareLink').hide();
+
+
+</script>
+
+<style>
+span.credits {
+	background: url(https://cdnjs.cloudflare.com/ajax/libs/simple-icons/3.0.1/whatsapp.svg) no-repeat top left;
+	background-size: contain;
+	cursor: pointer;
+	display: inline-block;
+	padding-left: 30px
+}
+</style>

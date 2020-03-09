@@ -1,0 +1,37 @@
+body
+{ 
+/*
+	background: 'login-bk.jpg';
+*/
+
+  padding-top: 55px;
+
+  height: 100vh; 
+
+/*
+  height: 95vh; 
+  padding-top: 5vh;
+*/
+
+	/*color: #594316;*/
+}
+
+.top-bar {
+  height: 40px; /* ~ 10% of viewport height */
+}
+
+
+.btnAvanzar
+{ 
+	color:green;
+}
+.btnRetroceder
+{ 
+	color:red;
+}
+.btnPermanecer
+{ 
+	color:blue;
+}
+
+/* background: 'login-bk.jpg'; */
